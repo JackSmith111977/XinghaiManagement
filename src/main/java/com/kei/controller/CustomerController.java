@@ -44,6 +44,7 @@ public class CustomerController {
                     break;
                 case 4:
                     //根据顾客姓名添加购琴信息
+                    customerService.addCustomerPurchase();
                     break;
                 case 5:
                     //根据顾客姓名查看购琴信息

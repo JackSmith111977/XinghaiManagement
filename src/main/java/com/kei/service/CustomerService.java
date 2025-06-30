@@ -6,4 +6,6 @@ public interface CustomerService {
     void deleteCustomer();
 
     void updateCustomer();
+
+    void addCustomerPurchase();
 }
