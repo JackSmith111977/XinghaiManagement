@@ -1,5 +1,6 @@
 package com.kei.controller;
 
+import com.kei.service.Impl.StudentServiceImpl;
 import com.kei.service.StudentService;
 
 import java.sql.SQLException;
@@ -7,7 +8,7 @@ import java.util.Scanner;
 
 public class StudentController {
     private final Scanner scanner = new Scanner(System.in);
-    private final StudentService studentService = new StudentService();
+    private final StudentService studentService = new StudentServiceImpl();
 
 
 

@@ -5,6 +5,7 @@ import com.kei.pojo.Teacher;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -133,5 +134,33 @@ public class TeacherDao {
         // 5. 释放资源
         statement.close();
         connection.close();
+    }
+
+    public void queryTeacher(int id) throws SQLException {
+        // 1. 获取连接
+        Connection connection = JDBCUtils.getConnection();
+        // 2. 创建语句
+        String sql = "select * from teacher where id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, id);
+        // 3. 执行语句, 获取结果集
+        ResultSet resultSet = statement.executeQuery();
+        // 4. 处理结果
+        while (resultSet.next()){
+            Teacher teacher = new Teacher(
+                    resultSet.getInt("id"),
+                    resultSet.getString("name"),
+                    resultSet.getInt("class_id"),
+                    resultSet.getObject("begin_time", LocalDate.class),
+                    resultSet.getObject("end_time", LocalDate.class),
+                    resultSet.getDouble("fee")
+            );
+            System.out.println(teacher);
+        }
+        // 5. 释放资源
+        statement.close();
+        connection.close();
+        resultSet.close();
+
     }
 }

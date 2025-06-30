@@ -1,13 +1,13 @@
 package com.kei.controller;
 
-import com.kei.service.TeacherService;
+import com.kei.service.Impl.TeacherServiceImpl;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class TeacherController {
     private Scanner scanner = new Scanner(System.in);
-    private TeacherService teacherService = new TeacherService();
+    private TeacherServiceImpl teacherService = new TeacherServiceImpl();
 
     public void start() throws SQLException {
         System.out.println("欢迎来到教师管理系统");
@@ -33,7 +33,7 @@ public class TeacherController {
                     teacherService.updateTeacher();
                     break;
                 case 4:
-                    System.out.println("查询教师");
+                    teacherService.queryTeacher();
                     break;
                 case 5:
                     System.out.println("退出系统");
