@@ -1,24 +1,27 @@
 package com.kei.pojo;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 
 public class Purchase {
     private Integer id;
     private Integer customerId;
-    private Integer productId;
     private LocalDate purchaseDate;
-    private Integer sellerId;
-    //全参
-    public Purchase(Integer id, Integer customerId, Integer productId, LocalDate purchaseDate, Integer sellerId) {
+    private Integer price;
+    private String sellerName;
+
+    public Purchase(Integer id, Integer customerId, LocalDate purchaseDate, Integer price, String sellerName) {
         this.id = id;
         this.customerId = customerId;
-        this.productId = productId;
         this.purchaseDate = purchaseDate;
-        this.sellerId = sellerId;
+        this.price = price;
+        this.sellerName = sellerName;
     }
-    //无参
+
     public Purchase() {
     }
+
 
     public Integer getId() {
         return id;
@@ -36,14 +39,6 @@ public class Purchase {
         this.customerId = customerId;
     }
 
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
-    }
-
     public LocalDate getPurchaseDate() {
         return purchaseDate;
     }
@@ -52,12 +47,20 @@ public class Purchase {
         this.purchaseDate = purchaseDate;
     }
 
-    public Integer getSellerId() {
-        return sellerId;
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setSellerId(Integer sellerId) {
-        this.sellerId = sellerId;
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public String getSellerName() {
+        return sellerName;
+    }
+
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
     }
 
     @Override
@@ -65,9 +68,9 @@ public class Purchase {
         return "Purchase{" +
                 "id=" + id +
                 ", customerId=" + customerId +
-                ", productId=" + productId +
                 ", purchaseDate=" + purchaseDate +
-                ", sellerId=" + sellerId +
+                ", price=" + price +
+                ", sellerName='" + sellerName + '\'' +
                 '}';
     }
 }
