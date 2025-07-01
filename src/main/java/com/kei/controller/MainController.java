@@ -7,6 +7,7 @@ public class MainController {
     private final PianoController pianoController = new PianoController();
     private final StudentController studentController = new StudentController();
     private final TeacherController teacherController = new TeacherController();
+    private final CustomerController customerController = new CustomerController();
     private final Scanner scanner = new Scanner(System.in);
 
     // 星海琴行主管理系统入口
@@ -37,7 +38,7 @@ public class MainController {
                     break;
                 case 4:
                     // 顾客管理系统
-
+                    customerController.start();
                     break;
                 case 5:
                     // 课程管理系统
