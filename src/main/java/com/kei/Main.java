@@ -5,7 +5,7 @@ import com.kei.controller.StudentController;
 
 import java.sql.SQLException;
 
-public class Main {
+public class {
     public static void main(String[] args) throws SQLException {
         MainController mainController = new MainController();
         mainController.start();

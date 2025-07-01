@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class MainController {
+    private final PianoController pianoController = new PianoController();
     private final StudentController studentController = new StudentController();
     private final TeacherController teacherController = new TeacherController();
     private final Scanner scanner = new Scanner(System.in);
@@ -22,6 +23,7 @@ public class MainController {
             scanner.nextLine();
             switch (choice){
                 case 1:
+                    pianoController.start();
                     // 琴管理系统
 
                     break;
