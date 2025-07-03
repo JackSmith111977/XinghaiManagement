@@ -8,6 +8,8 @@ public class MainController {
     private final StudentController studentController = new StudentController();
     private final TeacherController teacherController = new TeacherController();
     private final CustomerController customerController = new CustomerController();
+    private final CourseController courseController = new CourseController();
+    private final ClassController classController = new ClassController();
     private final Scanner scanner = new Scanner(System.in);
 
     // 星海琴行主管理系统入口
@@ -17,36 +19,30 @@ public class MainController {
         System.out.println("===========================");
 
         boolean running = true;
-        while (running){
+        while (running) {
             showMenu();
             System.out.println("请输入你的选择：");
             int choice = scanner.nextInt();
-            scanner.nextLine();
-            switch (choice){
-                case 1:
-                    pianoController.start();
-                    // 琴管理系统
+            scanner.nextLine(); // 消耗换行符
 
+            switch (choice) {
+                case 1:
+                    pianoController.start(); // 琴管理系统
                     break;
                 case 2:
-                    // 教师管理系统
-                    teacherController.start();
+                    teacherController.start(); // 教师管理系统
                     break;
                 case 3:
-                    // 班级管理系统
-
+                    classController.start(); // 班级管理系统
                     break;
                 case 4:
-                    // 顾客管理系统
-                    customerController.start();
+                    customerController.start(); // 顾客管理系统
                     break;
                 case 5:
-                    // 课程管理系统
-
+                    courseController.start(); // 课程管理系统
                     break;
                 case 6:
-                    // 学生管理系统
-                    studentController.start();
+                    studentController.start(); // 学生管理系统
                     break;
                 case 7:
                     System.out.println("退出系统");
@@ -54,18 +50,14 @@ public class MainController {
                     break;
                 default:
                     System.out.println("无效输入，请重新输入");
-
             }
-
-
-
         }
         // 关闭输入流
         scanner.close();
     }
 
     // 菜单
-    public void showMenu(){
+    public void showMenu() {
         System.out.println("1. 琴管理系统");
         System.out.println("2. 教师管理系统");
         System.out.println("3. 班级管理系统");
