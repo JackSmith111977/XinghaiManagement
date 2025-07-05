@@ -1,7 +1,9 @@
 package com.kei.service;
 
 import java.sql.SQLException;
-
+/**
+ * 王俊锡
+ */
 public interface CustomerService {
     void addCustomer() throws SQLException;
 

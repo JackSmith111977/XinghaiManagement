@@ -3,6 +3,10 @@ package com.kei.controller;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ * 邱显煜
+ */
+
 public class MainController {
     private final PianoController pianoController = new PianoController();
     private final StudentController studentController = new StudentController();

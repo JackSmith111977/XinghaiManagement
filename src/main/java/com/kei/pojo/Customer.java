@@ -3,6 +3,10 @@ package com.kei.pojo;
 import java.time.LocalDate;
 import java.util.Date;
 
+
+/**
+ * 王俊锡
+ */
 public class Customer {
         private Integer id;
         private String name;

@@ -32,7 +32,7 @@ public class StudentController {
                     studentService.updateStudent();
                     break;
                 case 4:
-                    studentService.selectStudentByClassId();
+                    studentService.getAllStudents();
                     break;
                 case 5:
                     System.out.println("退出系统");
@@ -52,7 +52,7 @@ public class StudentController {
         System.out.println("1. 添加学生");
         System.out.println("2. 删除学生");
         System.out.println("3. 修改学生");
-        System.out.println("4. 根据班级查询学生");
+        System.out.println("4. 查询所有学生");
         System.out.println("5. 退出系统");
     }
 

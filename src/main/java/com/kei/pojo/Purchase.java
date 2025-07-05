@@ -4,6 +4,10 @@ import lombok.Getter;
 
 import java.time.LocalDate;
 
+/**
+ * 王俊锡
+ */
+
 public class Purchase {
     private Integer id;
     private Integer customerId;

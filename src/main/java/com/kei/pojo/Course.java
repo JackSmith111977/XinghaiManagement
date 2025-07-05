@@ -2,6 +2,10 @@ package com.kei.pojo;
 
 import java.math.BigDecimal;
 
+/**
+ * 马璞
+ */
+
 public class Course {
     private Integer id;
     private String name;

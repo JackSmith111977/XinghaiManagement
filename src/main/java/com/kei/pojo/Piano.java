@@ -2,6 +2,10 @@ package com.kei.pojo;
 
 import java.math.BigDecimal;
 
+/**
+ * 崔棋铭
+ */
+
 public class Piano {
     private Integer id;
     private String name; // 琴的名称或型号

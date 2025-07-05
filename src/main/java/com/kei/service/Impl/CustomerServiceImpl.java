@@ -10,6 +10,10 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+/**
+ * 王俊锡
+ */
+
 public class CustomerServiceImpl implements CustomerService {
     private static final Scanner scanner = new Scanner(System.in);
     private static final CustomerDao customerDao = new CustomerDao();

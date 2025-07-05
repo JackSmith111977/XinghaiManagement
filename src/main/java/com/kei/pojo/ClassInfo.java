@@ -1,5 +1,9 @@
 package com.kei.pojo;
 
+/**
+ * 马璞
+ */
+
 public class ClassInfo {
     private Integer id;
     private String className;

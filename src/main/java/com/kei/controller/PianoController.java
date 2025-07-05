@@ -6,6 +6,10 @@ import com.kei.service.PianoService;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ * 崔棋铭
+ */
+
 public class PianoController {
     private final Scanner scanner = new Scanner(System.in);
     private final PianoService pianoService = new PianoServiceImpl();

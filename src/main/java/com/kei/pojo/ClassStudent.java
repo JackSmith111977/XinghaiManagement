@@ -2,6 +2,10 @@ package com.kei.pojo;
 
 import java.util.Date;
 
+/**
+ * 马璞
+ */
+
 public class ClassStudent {
     private Integer id;
     private Integer classId;      // 班级ID
