@@ -3,10 +3,11 @@ package com.kei.dao;
 import com.kei.jdbcUtils.JDBCUtils;
 import com.kei.pojo.Customer;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+
+/**
+ * 王俊锡
+ */
 
 public class CustomerDao {
     public void addCustomer(Customer customer) throws SQLException
@@ -20,8 +21,13 @@ public class CustomerDao {
         preparedStatement.setString(3, customer.getAddress());
 
         // 执行SQL，获取结果集
-        int result = preparedStatement.executeUpdate();
-        System.out.println(result > 0 ? "添加成功！" : "添加失败！");
+
+        try {
+            int result = preparedStatement.executeUpdate();
+            System.out.println(result > 0 ? "添加成功" : "添加失败");
+        } catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println("手机号已存在，请更换手机号");
+        }
         preparedStatement.close();
         connection.close();
     }

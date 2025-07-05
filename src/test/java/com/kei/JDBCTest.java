@@ -65,9 +65,7 @@ public class JDBCTest {
             Student student = new Student(
                 resultSet.getInt("id"),
                 resultSet.getString("name"),
-                resultSet.getString("phone"),
-                resultSet.getInt("class_id"),
-                resultSet.getInt("course_id")
+                resultSet.getString("phone")
             );
             System.out.println(student);
         }

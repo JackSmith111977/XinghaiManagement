@@ -7,6 +7,10 @@ import com.kei.service.StudentService;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ * 邱显煜
+ */
+
 public class StudentServiceImpl implements StudentService {
     private static final Scanner scanner = new Scanner(System.in);
     private static final StudentDao studentDao = new StudentDao();
@@ -18,13 +22,7 @@ public class StudentServiceImpl implements StudentService {
         String name = scanner.nextLine();
         System.out.println("请输入学生的手机号：");
         String phone = scanner.nextLine();
-        System.out.println("请输入学生的班级ID：");
-        int classId = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("请输入学生的课程ID：");
-        int courseId = scanner.nextInt();
-        scanner.nextLine();
-        Student student = new Student(null, name, phone, classId, courseId);
+        Student student = new Student(null, name, phone);
         studentDao.addStudent(student);
 
     }
@@ -54,9 +52,7 @@ public class StudentServiceImpl implements StudentService {
             System.out.println("请输入要修改的信息：");
             System.out.println("1.修改姓名");
             System.out.println("2.修改手机号");
-            System.out.println("3.修改班级ID");
-            System.out.println("4.修改课程ID");
-            System.out.println("5.取消修改");
+            System.out.println("3.取消修改");
             int choice = scanner.nextInt();
             scanner.nextLine();
             switch (choice){
@@ -71,18 +67,6 @@ public class StudentServiceImpl implements StudentService {
                     studentDao.updateStudentPhone(id,phone);
                     break;
                 case 3:
-                    System.out.println("请输入学生班级ID");
-                    int classId = scanner.nextInt();
-                    scanner.nextLine();
-                    studentDao.updateStudentClassId(id,classId);
-                    break;
-                case 4:
-                    System.out.println("请输入学生课程ID");
-                    int courseId = scanner.nextInt();
-                    scanner.nextLine();
-                    studentDao.updateStudentCourseId(id,courseId);
-                    break;
-                case 5:
                     System.out.println("取消修改,返回学生管理系统");
                     running = false;
 
@@ -95,10 +79,15 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void selectStudentByClassId() throws SQLException {
-        System.out.println("请输入班级ID：");
-        int classId = scanner.nextInt();
-        scanner.nextLine();
-        studentDao.selectStudentByClassId(classId);
+    public void getAllStudents() throws SQLException {
+        studentDao.getAllStudents();
     }
+
+//    @Override
+//    public void selectStudentByClassId() throws SQLException {
+//        System.out.println("请输入班级ID：");
+//        int classId = scanner.nextInt();
+//        scanner.nextLine();
+//        studentDao.selectStudentByClassId(classId);
+//    }
 }

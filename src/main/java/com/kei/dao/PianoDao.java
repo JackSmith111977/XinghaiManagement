@@ -8,6 +8,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * 崔棋铭
+ */
+
 public class PianoDao {
 
     public void addPiano(Piano piano) throws SQLException {

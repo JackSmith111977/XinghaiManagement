@@ -10,6 +10,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+
+/**
+ * 王俊锡
+ */
+
 public class PurchaseDao {
 
     public void addCustomerPurchase(Purchase purchase) throws SQLException
@@ -39,9 +44,11 @@ public class PurchaseDao {
     }
 
     public void queryCustomerPurchase( int customerId) throws SQLException {
-        Connection connection = JDBCUtils.getConnection();
 
         if(!judgeId(customerId))return;
+
+        Connection connection = JDBCUtils.getConnection();
+
         String sql = "select p.id,p.purchase_date,p.price,p.seller_name\n" +
                 "from customer c join purchase p " +
                 "on c.id = p.customer_id " +
@@ -51,10 +58,11 @@ public class PurchaseDao {
         preparedStatement.setInt(1, customerId);
         ResultSet resultSet = preparedStatement.executeQuery();
 
-        if(!resultSet.next()){
+        int count = 0;
+        /*if(!resultSet.next()){
             System.out.println("未找到该顾客的购买记录");
             return;
-        }
+        }*/
 
         while (resultSet.next()) {
             int id = resultSet.getInt("p.id");
@@ -67,7 +75,14 @@ public class PurchaseDao {
                     ", purchase_date: " + purchaseDate +
                     ", price: " + price +
                     ", seller_name: " + sellerName);
+            count++;
         }
+
+        if(count == 0){
+            System.out.println("未找到该顾客的购买记录");
+            return;
+        }
+
         preparedStatement.close();
         connection.close();
     }
@@ -153,8 +168,12 @@ public class PurchaseDao {
         ResultSet resultSet = preparedStatement.executeQuery();
         if (!resultSet.next()) {
             System.out.println("未找到该顾客");
+            preparedStatement.close();
+            resultSet.close();
             return false;
         }
+        preparedStatement.close();
+        connection.close();
         return true;
     }
 }

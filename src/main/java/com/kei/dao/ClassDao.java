@@ -4,6 +4,10 @@ import com.kei.jdbcUtils.JDBCUtils;
 import com.kei.pojo.ClassInfo;
 import java.sql.*;
 
+/**
+ * 马璞
+ */
+
 public class ClassDao {
     // 创建班级
     public boolean createClass(String name, int teacherId, int courseId, String schedule) {
@@ -165,7 +169,7 @@ public class ClassDao {
 
         try {
             conn = JDBCUtils.getConnection();
-            String sql = "SELECT s.id, s.name FROM students s JOIN class_students cs ON s.id = cs.student_id WHERE cs.class_id = ?";
+            String sql = "SELECT s.id, s.name FROM student s JOIN class_students cs ON s.id = cs.student_id WHERE cs.class_id = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, classId);
             rs = pstmt.executeQuery();

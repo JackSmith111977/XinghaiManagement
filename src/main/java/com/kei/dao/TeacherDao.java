@@ -9,6 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+/**
+ * 邱显煜
+ */
+
 public class TeacherDao {
 
     public void addTeacher(Teacher teacher) throws SQLException {

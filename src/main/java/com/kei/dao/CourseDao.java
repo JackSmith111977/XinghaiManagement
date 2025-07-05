@@ -5,6 +5,10 @@ import com.kei.pojo.Course;
 import java.sql.*;
 import java.math.BigDecimal;
 
+/**
+ * 马璞
+ */
+
 public class CourseDao {
     public void addCourse(Course course) throws SQLException {
         Connection conn = JDBCUtils.getConnection();

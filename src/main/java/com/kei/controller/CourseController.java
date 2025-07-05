@@ -4,6 +4,10 @@ import com.kei.service.Impl.CourseServiceImpl;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ * 马璞
+ */
+
 public class CourseController {
     private final CourseServiceImpl courseService = new CourseServiceImpl();
     private final Scanner scanner = new Scanner(System.in);

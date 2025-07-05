@@ -6,6 +6,10 @@ import com.kei.service.Impl.CustomerServiceImpl;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ * 王俊锡
+ */
+
 public class CustomerController {
     private final Scanner scanner = new Scanner(System.in);
     private final CustomerService customerService = new CustomerServiceImpl();

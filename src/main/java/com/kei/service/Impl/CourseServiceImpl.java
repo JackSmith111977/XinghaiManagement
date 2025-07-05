@@ -7,6 +7,10 @@ import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ * 马璞
+ */
+
 public class CourseServiceImpl implements CourseService {
     private static final Scanner scanner = new Scanner(System.in);
     private static final CourseDao courseDao = new CourseDao();

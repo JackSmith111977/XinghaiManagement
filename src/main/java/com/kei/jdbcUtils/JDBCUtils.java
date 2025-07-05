@@ -8,8 +8,10 @@ import java.sql.SQLException;
 /**
  * JDBC工具类
  * 获取连接，返回连接
+ * 邱显煜
  */
 public class JDBCUtils {
+    //获取连接(URL = jdbc:数据源名字://端口号/要使用的数据库)
     private static final String url = "jdbc:mysql://localhost:3306/db_xinghai";
     private static final String user = "root";
     private static final String password = "114514";

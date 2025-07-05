@@ -5,6 +5,10 @@ import com.kei.service.ClassService;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ * 马璞
+ */
+
 public class ClassServiceImpl implements ClassService {
     private static final Scanner scanner = new Scanner(System.in);
     private static final ClassDao classDao = new ClassDao();

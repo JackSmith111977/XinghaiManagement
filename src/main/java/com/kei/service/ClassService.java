@@ -2,6 +2,9 @@ package com.kei.service;
 
 import java.sql.SQLException;
 
+/**
+ * 马璞
+ */
 public interface ClassService {
     void createClass() throws SQLException;
     void deleteClass() throws SQLException;

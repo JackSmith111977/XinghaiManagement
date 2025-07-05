@@ -5,6 +5,10 @@ import com.kei.service.Impl.TeacherServiceImpl;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+/**
+ * 邱显煜
+ */
+
 public class TeacherController {
     private Scanner scanner = new Scanner(System.in);
     private TeacherServiceImpl teacherService = new TeacherServiceImpl();
